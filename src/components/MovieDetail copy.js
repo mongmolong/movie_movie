@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import "../css/details.css";
 
 const MovieDetail = () => {
     const params = useParams()
@@ -17,6 +16,7 @@ const MovieDetail = () => {
                 }
             }
             const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${params.id}?language=en-US`, config)
+            console.log(data)
             setMovie(data)
         } catch (err) {
             console.log(err.message)
@@ -27,18 +27,11 @@ const MovieDetail = () => {
         getMovieById();
     }, [])
 
-    if (!movie) {
-        return <div>Loading...</div>;
-    }
-
     return (
-        <div className="detailContainer">
-            <img className="detailImg" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-            <div className="detailAbout">
-                <h1>Title : {movie.title}</h1>
-                <p>{movie.overview}</p>
-                <button className="detailBtn" onClick={() => navigation(-1)}>뒤로가기</button>
-            </div>
+        <div>
+            <h1>{movie.title}</h1>
+            <button onClick={() => navigation(-1)}>뒤로가기</button>
+
         </div>
     );
 };

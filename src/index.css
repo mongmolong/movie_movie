@@ -18,6 +18,16 @@ code {
   align-items: center;
   align-content: center;
   border: none !important;
+}
 
+.btn{
+  position: absolute;
+  bottom:0;
+  left:50%;
+  transform: translateX(-50%);
 
+}
+.boxDetail{
+  position: relative;
+  height: 620px !important;
 }

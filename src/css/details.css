@@ -1,0 +1,55 @@
+.detailContainer {
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    & h1 {
+        font-size: 1.5em;
+    }
+}
+
+.detailAbout {
+    width: 40%;
+    padding: 20px;
+}
+
+.detailBtn {
+    border: 1px solid rgb(212, 212, 212);
+    color: rgb(13, 133, 189);
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 5px;
+    transition: all 0.3s;
+
+    &:hover {
+        border: 1px solid gray;
+        color: rgb(70, 70, 70);
+    }
+}
+
+.detailImg {
+    width: 28%;
+}
+
+@media all and (max-width: 1000px) {
+    .detailContainer {
+        display: grid;
+        flex-direction: column;
+        & h1 {
+            font-size: 1.2em;
+        }
+    }
+
+    .detailAbout {
+        width: 95%;
+    }
+
+    .detailImg {
+        width:50%;
+        min-width: 400px;        
+    }
+
+}

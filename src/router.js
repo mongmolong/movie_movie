@@ -3,6 +3,7 @@ import MovieList from "./components/MovieList";
 import TvList from "./components/TvList";
 import MovieDetail from "./components/MovieDetail";
 import TvDetails from "./components/TvDetails";
+import NabTabs from "./components/NavTabs";
 
 
 
@@ -10,19 +11,38 @@ const router = createBrowserRouter(
     [
         {
             path: "/",
-            element: <MovieList />
+            element: (
+                <>
+                    <NabTabs />,
+                    <MovieList />
+                </>
+            )
         },
         {
             path: "/:id", //params를 통해 접근가능
-            element: <MovieDetail />
+            element: (
+                <>
+                    <NabTabs />,
+                    <MovieDetail />
+                </>
+            )
         },
         {
             path: "/tv",
-            element: <TvList />
+            element: (
+                <>
+                    <NabTabs />,
+                    <TvList />
+                </>)
         },
         {
             path: "/:id", //params를 통해 접근가능
-            element: <TvDetails />
+            element: (
+                <>
+                    <NabTabs />,
+                    <TvDetails />
+                </>
+            )
         }],
     {
         basename: process.env.PUBLIC_URL

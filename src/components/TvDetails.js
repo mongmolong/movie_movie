@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import "../css/details.css";
+
 
 const TvDetails = () => {
     const params2 = useParams()
@@ -26,17 +28,21 @@ const TvDetails = () => {
     useEffect(() => {
         getTvById();
     }, [])
-    
+
     if (!tv) {
         return <div>Loading...</div>;
     }
 
-    return (
-        <div>
-            <button onClick={() => navigation(-1)}>뒤로가기</button>
-            <h1>{tv.name}</h1>
-            <p>{tv.overview}</p>
+    return ( 
+        <div className="detailContainer">
+            <img className="detailImg" src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} alt={tv.title} />
+            <div className="detailAbout">
+                <h1>Title : {tv.title}</h1>
+                <p>{tv.overview}</p>
+                <button className="detailBtn" onClick={() => navigation(-1)}>뒤로가기</button>
+            </div>
         </div>
+
     );
 };
 

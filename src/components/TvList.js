@@ -33,12 +33,11 @@ const TvList = () => {
 
     return (
         <Container className="mt-3">
-            <h1>TV List</h1>
+            <h1>Best TV List 😘</h1>
             <Row className="mt-5" >
                 {tvs && tvs.map((tv) => (
-                    <Col className="mb-3" key={tv.id}>
-                        {/* key이렇게 넣는거 맞아?  */}
-                        <Card style={{ width: '18rem' }}>
+                    <Col className="mb-5" key={tv.id}>
+                        <Card className="boxDetail" style={{ width: '18rem' }}>
                             <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} />
                             <Card.Body>
                                 <Card.Title>{tv.name.slice(0, 10)} </Card.Title>
@@ -46,7 +45,7 @@ const TvList = () => {
                                     {tv.overview.slice(0, 90)}
                                 </Card.Text>
                                 <Link to={`/${tv.id}`}>
-                                    <Button variant="primary">Go somewhere</Button>
+                                    <Button variant="primary">더보기</Button>
                                 </Link>
                             </Card.Body>
                         </Card>

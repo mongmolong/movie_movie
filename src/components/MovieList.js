@@ -38,12 +38,12 @@ const MovieList = () => {
 
     return (
         <Container className="mt-3">
-            <h1>영화List</h1>
+            <h1>Best Movie List 🤩</h1>
             {/* <button onClick={getMovies}>버튼 클릭</button> */}
             <Row className="mt-5" >
                 {movies && movies.map(movie => (
-                    <Col className="mb-3">
-                        <Card style={{ width: '18rem' }}>
+                    <Col className="mb-5">
+                        <Card className="boxDetail" style={{ width: '18rem' }}>
                             <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
                             <Card.Body>
                                 <Card.Title>{movie.title.slice(0, 10)} </Card.Title>
@@ -51,7 +51,7 @@ const MovieList = () => {
                                     {movie.overview.slice(0, 90)}
                                 </Card.Text>
                                 <Link to={`/${movie.id}`}>
-                                    <Button variant="primary">Go somewhere</Button>
+                                    <Button variant="primary">더보기</Button>
                                 </Link>
                             </Card.Body>
                         </Card>
