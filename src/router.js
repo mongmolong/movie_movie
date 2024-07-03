@@ -23,6 +23,9 @@ const router = createBrowserRouter([
         path: "/:id", //params를 통해 접근가능
         element: <TvDetails />
     },
+    {
+      basename: process.env.PUBLIC_URL
+    }
 
     
 
